@@ -1,36 +1,37 @@
 import React from "react";
-import { useState } from "react";
-import Modal from "@mui/material/Modal";
-import { Typography, Container, Box, TextField, Button } from "@mui/material";
+// import { useState } from "react";
+// import Modal from "@mui/material/Modal";
+import { Typography, Container, Box } from "@mui/material";
 import Navigation from "../Navigation/Navigation";
 import ImageCarousel from "../ImageCarousel/ImageCarousel";
-import qrCode from "./qr-code.png";
+import qrCodeProd from "./qr-code-prod.png";
+// import qrCodeDev from "./qr-code-dev.png";
 
 const HomePage = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [memberId, setMemberId] = useState<undefined | string>(undefined);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const [memberId, setMemberId] = useState<undefined | string>(undefined);
 
-  // Regex for validating UUIDs
-  const regex =
-    /^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$/;
+  // // Regex for validating UUIDs
+  // const regex =
+  //   /^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$/;
 
-  const handleQrClick = () => {
-    setIsOpen(true);
-  };
+  // const handleQrClick = () => {
+  //   setIsOpen(true);
+  // };
 
-  const handleClose = () => {
-    setIsOpen(false);
-    setMemberId(undefined);
-  };
+  // const handleClose = () => {
+  //   setIsOpen(false);
+  //   setMemberId(undefined);
+  // };
 
-  const handleSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    window.open(
-      `https://showcase-sandbox-en.alidainsights.com/c/a/6Zq8GZt8bu5Cpvvg89mRDI?_i=${memberId}`,
-      "_blank"
-    );
-    setIsOpen(false);
-  };
+  // const handleSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   window.open(
+  //     `https://showcase-sandbox-en.alidainsights.com/c/a/6Zq8GZt8bu5Cpvvg89mRDI?_i=${memberId}`,
+  //     "_blank"
+  //   );
+  //   setIsOpen(false);
+  // };
 
   return (
     <div>
@@ -78,15 +79,21 @@ const HomePage = () => {
               Scan to provide feedback
             </Typography>
             <img
-              src={qrCode}
+              src={qrCodeProd}
               alt="qr code"
               style={{ width: "300px", cursor: "pointer" }}
-              onClick={handleQrClick}
+              onClick={() =>
+                window.open(
+                  "https://showcase-sandbox-en.alidainsights.com/c/a/5tPG2prqbwEJBKSnAfJ0e9",
+                  "_blank"
+                )
+              }
+              // onClick={handleQrClick}
             />
           </Box>
         </Box>
       </Container>
-      {isOpen && (
+      {/* {isOpen && (
         <Modal open={isOpen} onClose={handleClose}>
           <Box
             sx={{
@@ -137,7 +144,7 @@ const HomePage = () => {
             </form>
           </Box>
         </Modal>
-      )}
+      )} */}
     </div>
   );
 };

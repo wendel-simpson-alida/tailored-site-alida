@@ -63,7 +63,7 @@ const Navigation: React.FC = () => {
             Our Story
           </Link>
           <Link
-            href="https://app.na2.alida.com/analytics/dashboards/3113"
+            href="https://app.na2.alida.com/analytics/dashboards/3168"
             color="inherit"
             target="_blank"
             underline="none"
